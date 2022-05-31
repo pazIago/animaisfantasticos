@@ -1,0 +1,301 @@
+@import "./variables.css";
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+p,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+  color: var(--c-0);
+  display: block;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 120px minmax(300px, 800px) 1fr;
+  margin: 0px;
+  padding: 0;
+  background-color: var(--c-2);
+  font-family: Helvetica, sans-serif;
+  font-size: 1rem;
+}
+
+.header {
+  background-color: var(--c-1);
+  grid-column: 3/-1;
+  margin: 2rem 0;
+}
+
+.header ul {
+  display: flex;
+  padding: 10px;
+}
+
+.header a {
+  padding: 15px 10px;
+  margin-right: 1px;
+  font-family: "ibm plex mono";
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.grid-mid {
+  grid-column: 2/4;
+  padding: 10px;
+}
+
+.animais,
+.faq,
+.contato {
+  display: grid;
+  grid-template-columns: 90px 300px 1fr;
+  gap: 20px;
+  margin-bottom: 4rem;
+}
+
+.title {
+  grid-column: 1/-1;
+  font-size: 6rem;
+  color: var(--c-0);
+  font-family: "Playfair Display SC", georgia;
+  margin-bottom: 1rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.animais ul {
+  grid-column: 2;
+  height: 370px;
+  overflow-y: scroll;
+}
+
+.animais ul::-webkit-scrollbar {
+  width: 18px;
+}
+
+.animais ul::-webkit-scrollbar-thumb {
+  background-color: var(--c-1);
+  border-left: 4px solid var(--c-2);
+  border-right: 4px solid var(--c-2);
+}
+
+.animais li {
+  height: inherit;
+  cursor: pointer;
+}
+
+.animais-content {
+  grid-column: 3;
+}
+
+.animais-content section {
+  margin-bottom: 3rem;
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+  font-family: "ibm plex mono";
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--c-3);
+  margin-bottom: 1rem;
+  letter-spacing: 0.1em;
+}
+
+h2::before {
+  display: block;
+  content: "";
+  width: 40px;
+  height: 10px;
+  background-color: var(--c-1);
+  margin-right: 10px;
+}
+
+p,
+dd {
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.faq-content {
+  grid-column: 2 /-1;
+}
+
+dt {
+  display: flex;
+  align-items: center;
+  font-family: "ibm plex mono";
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--c-3);
+  letter-spacing: 0.1em;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+dt::before,
+.contato li::before {
+  display: block;
+  content: "";
+  width: 20px;
+  height: 10px;
+  background-color: var(--c-1);
+  margin-right: 10px;
+}
+
+dt::after {
+  content: "⬎";
+  margin-left: 10px;
+}
+
+dt.ativo::after {
+  content: "⬏";
+  margin-left: 10px;
+}
+
+dd {
+  margin-left: 30px;
+}
+
+.map {
+  grid-column: 2;
+}
+
+.contato li {
+  grid-column: 3;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  grid-column: 3/-1;
+  margin-bottom: 2rem;
+  padding: 20px;
+  background-color: var(--c-1);
+}
+
+footer p {
+  font-weight: 600;
+  max-height: 100%;
+  margin: auto 0px;
+  font-family: "ibm plex mono";
+}
+
+.js .js-tabcontent section,
+.js .js-accordion dd {
+  display: none;
+}
+
+.js-tabcontent section.ativo {
+  display: block;
+  animation: show 0.5s forwards;
+}
+
+.js-accordion dd.ativo {
+  display: block;
+  animation: slideDown 0.5s forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 1000px;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.js .js-scroll {
+  opacity: 0;
+  transition: 0.3s;
+  transform: translate3d(0, -30px, 0);
+}
+
+.js-scroll.ativo {
+  opacity: 1;
+  transform: translate3d(0,0,0);
+}
+
+@media (max-width: 800px) {
+  body {
+    grid-template-columns: 1fr;
+  }
+  .grid-mid,
+  .header,
+  footer {
+    grid-column: 1;
+  }
+
+  .grid-mid {
+    gap: 10px;
+  }
+
+  .animais,
+  .faq,
+  .contato {
+    grid-template-columns: 100px 1fr;
+    margin-bottom: 2rem;
+  }
+
+  .animais ul {
+    grid-column: 1;
+  }
+
+  .animais li {
+    height: max-content;
+  }
+
+  .faq-content,
+  .map,
+  .contato ul {
+    grid-column: 1/-1;
+  }
+  .title {
+    font-size: 3rem;
+  }
+
+  .header {
+    margin-top: 0px;
+  }
+  .map {
+    margin-bottom: 2rem;
+  }
+  .footer {
+    margin-bottom: 0px;
+  }
+}
