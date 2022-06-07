@@ -43,7 +43,7 @@ body {
   margin: 2rem 0;
 }
 
-.header>ul {
+.header > ul {
   display: flex;
   padding: 10px;
 }
@@ -51,7 +51,7 @@ body {
 .header a {
   padding: 15px 10px;
   margin-right: 1px;
-  font-family: "ibm plex mono";
+  font-family: "ibm plex mono", monospace;
   font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.1em;
