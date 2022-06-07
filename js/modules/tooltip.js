@@ -1,5 +1,5 @@
-export default function initTooltip() {}
-const box = document.querySelector("div.tooltip");
+export default function initTooltip() {
+  const box = document.querySelector("div.tooltip");
 const tooltips = document.querySelectorAll("[data-tooltip]");
 tooltips.forEach((item) => {
   item.addEventListener("mouseover", onMouseOver);
@@ -38,4 +38,5 @@ function createTooltipBox(element) {
   tooltipBox.innerText = text;
   document.body.appendChild(tooltipBox);
   return tooltipBox;
+}
 }

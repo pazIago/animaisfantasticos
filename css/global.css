@@ -43,7 +43,7 @@ body {
   margin: 2rem 0;
 }
 
-.header ul {
+.header>ul {
   display: flex;
   padding: 10px;
 }
