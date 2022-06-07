@@ -7,7 +7,7 @@ tabContent[0].classList.add("ativo");
 
 function showContent(index) {
   tabContent.forEach((section) => section.classList.remove("ativo"));
-  tabContent[index].classList.add("ativo");
+  tabContent[index].classList.add("ativo", tabContent[index].dataset.anime);
 }
 
 tabMenu.forEach((item, index) =>
