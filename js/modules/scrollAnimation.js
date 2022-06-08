@@ -10,8 +10,9 @@ export default function initScrollAnimation() {
       sectionList.forEach((item) => {
         const sectionTop = item.getBoundingClientRect().top - windowSlice;
         if (sectionTop < 0) {
+          if (!item.classList.contains('ativo'))
           item.classList.add("ativo");
-        }
+        } 
       });
     }
 
