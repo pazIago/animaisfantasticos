@@ -45,7 +45,9 @@ body {
 
 .header > ul {
   display: flex;
+  flex-wrap: wrap;
   padding: 10px;
+ 
 }
 
 .header a {
@@ -255,7 +257,7 @@ footer p {
   transform: translate3d(0, 0, 0);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 700px) {
   .body-container {
     grid-template-columns: 1fr;
   }

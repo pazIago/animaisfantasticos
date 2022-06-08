@@ -42,9 +42,6 @@
   border-right: 10px solid transparent;
 }
 
-.dropdown-menu li a {
-  padding: 10px;
-}
 
 .dropdown-menu li a:hover {
   color: white;
