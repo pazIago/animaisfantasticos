@@ -176,6 +176,13 @@ dt::before,
   border: 2px solid var(--c-0);
 }
 
+.btc-preco {
+  background-color: chartreuse;
+  padding: .2rem .3rem;
+  margin: 0 .2rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
 .contato li.aberto:last-child::after {
   background-color: chartreuse;
 }
