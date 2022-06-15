@@ -1,4 +1,9 @@
 export default function initBitcoin() {
+  function changePrice(price) {
+    const priceHolder = document.querySelector(".btc-preco");
+    priceHolder.innerHTML = price;
+  }
+
   async function fetchBitcoin(url) {
     const bitcoinResponse = await fetch(url);
     const json = await bitcoinResponse.json();
@@ -6,11 +11,5 @@ export default function initBitcoin() {
     changePrice(price);
   }
 
-  function changePrice(price) {
-    const priceHolder = document.querySelector(".btc-preco");
-    priceHolder.innerHTML = price;
-  }
-
   fetchBitcoin("https://blockchain.info/ticker");
 }
-

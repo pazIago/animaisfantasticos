@@ -1,5 +1,4 @@
-//scroll animation
-
+/* eslint-disable no-inner-declarations */
 export default function initScrollAnimation() {
   const sectionList = document.querySelectorAll(".js-scroll");
 
@@ -10,9 +9,8 @@ export default function initScrollAnimation() {
       sectionList.forEach((item) => {
         const sectionTop = item.getBoundingClientRect().top - windowSlice;
         if (sectionTop < 0) {
-          if (!item.classList.contains('ativo'))
-          item.classList.add("ativo");
-        } 
+          if (!item.classList.contains("ativo")) item.classList.add("ativo");
+        }
       });
     }
 

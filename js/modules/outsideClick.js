@@ -1,9 +1,6 @@
 export default function outsideClick(element, callback) {
   const html = document.documentElement;
-  setTimeout(() => {
-    html.addEventListener("click", handleOutside);
-    html.addEventListener("touchstart", handleOutside);
-  });
+
   function handleOutside(event) {
     if (!element.contains(event.target)) {
       html.removeEventListener("click", handleOutside);
@@ -11,4 +8,9 @@ export default function outsideClick(element, callback) {
       callback();
     }
   }
+
+  setTimeout(() => {
+    html.addEventListener("click", handleOutside);
+    html.addEventListener("touchstart", handleOutside);
+  });
 }

@@ -1,11 +1,8 @@
+/* eslint-disable import/extensions */
 import outsideClick from "./outsideClick.js";
 
 export default function initDropown() {
   const dropdownMenus = document.querySelectorAll("[data-dropdown]");
-  dropdownMenus.forEach((menu) => {
-    menu.addEventListener("touchstart", handleClick);
-    menu.addEventListener("click", handleClick);
-  });
 
   function handleClick(event) {
     event.preventDefault();
@@ -14,4 +11,9 @@ export default function initDropown() {
       this.classList.remove("ativo");
     });
   }
+
+  dropdownMenus.forEach((menu) => {
+    menu.addEventListener("touchstart", handleClick);
+    menu.addEventListener("click", handleClick);
+  });
 }

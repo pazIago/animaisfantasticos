@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 export default function initAnimaNumbers() {function animaNumeros() {
   const numbers = document.querySelectorAll("[data-numero]");
 
@@ -8,7 +9,7 @@ export default function initAnimaNumbers() {function animaNumeros() {
     let start = 0;
     const timer = setInterval(() => {
       start += increase;
-      let text = start.toFixed();
+      const text = start.toFixed();
       number.innerText = text;
       if (start > memory) {
         number.innerText = memory;

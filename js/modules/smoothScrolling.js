@@ -1,4 +1,3 @@
-//scroll
 export default function initSmoothScrolling() {
   const innerLinks = document.querySelectorAll('.js-navmenu a[href^="#"]');
 
