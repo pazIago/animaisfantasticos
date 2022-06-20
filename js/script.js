@@ -10,6 +10,7 @@ import initMenuMobile from "./modules/menuMobile.js";
 import initFuncionamento from "./modules/funcionamento.js";
 import initCreateAnimals from "./modules/animalsList.js";
 import initBitcoin from "./modules/bitcoin.js";
+import { SlideNav } from "./modules/slide.js";
 
 initAccordion();
 initTabMenu();
@@ -22,3 +23,7 @@ initMenuMobile();
 initFuncionamento();
 initCreateAnimals();
 initBitcoin();
+
+const slide = new SlideNav(".slide", ".wrapper");
+slide.init();
+slide.addControl();
