@@ -1,3 +1,5 @@
+/* eslint-disable import/extensions */
+/* eslint-disable max-classes-per-file */
 import debounce from "./debounce.js";
 
 export class Slide {
@@ -115,6 +117,7 @@ export class Slide {
   activePrevSlide() {
     if (this.index.prev !== undefined) this.changeSlide(this.index.prev);
   }
+
   activeNextSlide() {
     if (this.index.next !== undefined) this.changeSlide(this.index.next);
   }
@@ -172,6 +175,7 @@ export class SlideNav extends Slide {
   createControl() {
     const control = document.createElement("ul");
     this.slideArray.forEach(
+      // eslint-disable-next-line no-return-assign
       (item, index) =>
         (control.innerHTML += `<li><a href="#slide${index + 1}">${
           index + 1
@@ -191,6 +195,7 @@ export class SlideNav extends Slide {
   }
 
   activeControlItem() {
+    // eslint-disable-next-line no-unused-vars
     this.controlArray.forEach((item, index) =>
       item.classList.remove(this.activeClass)
     );
