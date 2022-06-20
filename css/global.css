@@ -190,13 +190,19 @@ dt::before,
 }
 
 dt::after {
-  content: "⬎";
   margin-left: 10px;
+  content: "";
+  width: 8px;
+  height: 10px;
+  display: inline-block;
+  background: url(../img/arrow-red.svg) no-repeat center center;
+  transform: rotate(90deg);
+  transition: transform 0.3s;
 }
 
 dt.ativo::after {
-  content: "⬏";
-  margin-left: 10px;
+  content: "";
+  transform: rotate(-90deg);
 }
 
 dd {
@@ -281,6 +287,13 @@ footer p {
   transform: translate3d(0, 0, 0);
 }
 
+.arrow-black {
+  background: url(../img/arrow-black.svg) no-repeat center center;
+  display: inline-block;
+  width: 8px;
+  height: 10px;
+}
+
 @media (max-width: 700px) {
   .body-container {
     grid-template-columns: 1fr;
@@ -317,7 +330,7 @@ footer p {
     grid-column: 1/-1;
   }
   .title {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .header {
